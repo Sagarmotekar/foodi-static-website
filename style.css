@@ -1,0 +1,805 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between; /* Adjusted for better spacing */
+    align-items: center;
+    padding: 12px 5%;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+/* Navigation Links */
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: rgb(109, 152, 23);
+    border-bottom: 2px solid rgb(8, 21, 102);
+}
+
+/* Social Icons */
+.nav-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.nav-icons i:hover {
+    color: rgba(0, 0, 0, 0.599);
+    transition: 0.2s ease-in-out;
+    
+}
+
+/* Contact Button */
+#contactBtn {
+    background-color: rgb(18, 181, 18);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contactBtn:hover {
+    background-color: rgb(12, 150, 12);
+}
+
+#contactBtn i {
+    margin-right: 8px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 3%;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+    .nav-icons {
+        gap: 15px;
+    }
+
+    #contactBtn {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    .section1-btns {
+        display: flex;
+        align-items:center;
+        /* flex-wrap: wrap; */
+        flex-direction:column ;
+        gap: 10px;
+        justify-content: center;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 2%;
+        gap: 30px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        font-size: 0.85rem;
+    }
+
+    .nav-icons {
+        gap: 30px;
+    }
+
+    #contactBtn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    .section1-btns {
+        display: flex;
+        align-items:center;
+        /* flex-wrap: wrap; */
+        flex-direction:column ;
+        gap: 1px;
+        justify-content: center;
+    }
+  
+}
+/* Section Styling */
+.section1 {
+    background-color:white;
+    margin-top: 20px;
+    padding: 25px;
+    width: 100%;
+    height: auto; /* Allow height to adjust dynamically */
+    display: flex;
+    flex-wrap: wrap; /* Ensures elements wrap properly on small screens */
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 50px; /* Provides space between left and right sections */
+}
+
+/* Left Section */
+.section1-left {
+    max-width: 500px;
+    text-align: left;
+}
+
+.section1-left span {
+    font-size: 2.2rem; /* Adjusts size dynamically */
+    font-weight: 800;
+}
+
+.section1-left p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.section1-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Prevents overflow */
+    justify-content: center;
+}
+
+/* Order Button */
+#order {
+    background-color: rgb(41, 183, 41);
+    padding: 12px 8px;
+    width: 150px;
+    height: 50px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 25px;
+    color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+#order:hover {
+    background-color: rgb(12, 150, 12);
+    transition: 0.2s ease-in-out;
+}
+
+.section1-left i {
+    text-align: left;
+    margin: 10px;
+    background-color: white;
+    padding: 9px 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+/* Right Section - Image Container */
+.section1-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    position: relative;
+}
+
+
+.section1-right img {
+    width:500px;
+    height: auto;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .section1 {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .section1-left {
+        text-align: center;
+    }
+    .section1-left span {
+        font-size: 1.8rem;
+    }
+
+    .section1-left p {
+        font-size: 0.95rem;
+    }
+    .section1-right img {
+        width:400px;
+        height: auto;
+    }
+
+    .section1-btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section1-right {
+        max-width: 280px;
+    }
+
+    .circle {
+        max-width: 280px;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .section1 {
+        padding: 15px;
+    }
+    .section1-left {
+        text-align: center;
+    }
+
+    .section1-left span {
+        font-size: 1.5rem;
+    }
+
+    .section1-left p {
+        font-size: 0.9rem;
+    }
+
+    #order {
+        width: 130px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .section1-right {
+        max-width: 220px;
+    }
+
+    .circle {
+        max-width: 220px;
+    }
+}
+/* Section 2 Styling */
+.section2 {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Product Container */
+.products {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    justify-content: center;
+    gap: 40px;
+    padding-top: 20px;
+}
+
+/* Individual Product Card */
+.firstprod {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    border: none;
+    gap: 15px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.firstprod:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .products {
+        gap: 30px;
+    }
+
+    .firstprod {
+        width: 180px;
+        height: 230px;
+        padding: 15px;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .products {
+        flex-direction: column; /* Stack products vertically */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .firstprod {
+        width: 90%; /* Take most of the screen width */
+        max-width: 250px;
+        height: auto;
+        padding: 20px;
+    }
+}
+.section3 {
+    padding: 50px;
+}
+.section3 i {
+    padding: 12px 15px;
+    font-weight: bold;
+    filter: invert;
+}
+#first {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 500px;
+
+}
+#arrow-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 15px;
+}
+#first-i {
+    color: rgba(25, 23, 23, 0.638);
+    background-color: rgba(116, 101, 129, 0.559);
+    border: none;
+    border-radius: 50%;
+}
+#first-i:hover {
+    background-color: green;
+    color: white;
+}
+#second-i {
+    color: white;
+    margin-left: 20px;
+    background-color: green;
+    border: none;
+    border-radius: 50%;
+}
+#second-i:hover {
+    background-color: rgba(116, 101, 129, 0.559);
+    color: rgb(27, 13, 13);
+}
+
+.card {
+    /* text-align: center; */
+    background-color: white;
+    width: 250px;
+    height: 270px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card .fa-regular  {
+    position: relative;
+    color: blue;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+.image {
+    display: flex;
+   justify-content: center;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+}
+.span {
+    padding-top: 10px;
+    text-align: left;
+}
+.last {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 1px;
+}
+.review i {
+    color: yellow;
+}
+.second {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    align-items: center;
+   margin-left: 200px;
+   margin-right: 200px;
+}
+.section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 400px;
+    margin-top: 85px;
+}
+.feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 25px;
+}
+.feedback-content {
+   line-height: 0.5;
+}
+/* ===== Section 3 - Responsive Design ===== */
+@media (max-width: 768px) {
+    #first {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    #arrow-icon {
+        gap: 15px;
+    }
+
+    .second {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin: 0;
+    }
+
+    .card {
+        width: 180px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #first {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .second {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 0;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 250px;
+    }
+}
+
+/* ===== Section 4 - Responsive Design ===== */
+@media (max-width: 768px) {
+    .section4 {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .feedback {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .section4 .text span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section4 {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .section4 .text span {
+        font-size: 14px;
+    }
+
+    .feedback {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.section5 {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    gap: 400px;
+    margin-top: 85px;
+}
+.section5 .first { 
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    text-align: left;
+}
+.section5 .first span {
+    text-align: left;
+}
+.section5 .first button {
+    margin : 20px;
+}
+
+.section5 .second-cont { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.firstbox {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: none;
+    gap: 15px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.firstbox:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+.above , .below{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+/* ===== Section 5 - Responsive Design ===== */
+@media (max-width: 1024px) {
+    .section5 {
+        gap: 50px;
+    }
+    
+    .section5 .first {
+        text-align: center;
+    }
+    .section5 .first span  {
+        font-size: 14px;
+    }
+    .section5 .second-cont {
+        gap: 20px;
+    }
+
+    .above, .below {
+        gap: 20px;
+    }
+
+    .firstbox {
+        width: 180px;
+        height: 180px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section5 {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .section5 .first {
+        align-items: center;
+    }
+
+    .section5 .second-cont {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .above, .below {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .firstbox {
+        width: 90%;
+        max-width: 250px;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section5 {
+        gap: 20px;
+        text-align: center;
+    }
+
+    .firstbox {
+        width: 100%;
+        max-width: 220px;
+        padding: 15px;
+    }
+
+    .above, .below {
+        gap: 10px;
+    }
+}
+footer {
+    width: 100%;
+    height: auto;
+    padding: 40px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items */
+    gap: 200px; /* Reduce gap for smaller screens */
+    text-align: center;
+    margin-top: 75px;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer ul li, footer ul li a {
+    list-style-type: none;
+    text-decoration: none;
+    line-height: 2;
+    color: rgba(0, 0, 0, 0.703);
+}
+
+.footbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers content */
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    gap: 100px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.footicons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+}
+
+.footicons i {
+    color: rgba(0, 0, 0, 0.701);
+    background-color: rgba(156, 145, 145, 0.134);
+    padding: 10px 11px;
+    border: none;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+}
+
+.footicons i:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Copyright Section */
+footbar p {
+    width: 100%;
+        text-align: center; /* Center the text */
+    margin-top: 20px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.703);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .footbar {
+        flex-direction: column;
+        gap: 30px;
+    }
+    footbar p{
+        font-size: 12px; /* Slightly smaller for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footicons {
+        justify-content: center;
+    }
+
+    footbar p {
+        font-size: 9px; /* Slightly smaller for smaller screens */
+    }
+}
